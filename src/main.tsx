@@ -1,0 +1,11 @@
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Layout from './components/Layout';
+import Home from './pages/Home';
+import Ocorrencias from './pages/Ocorrencias';
+import Registrar from './pages/Registrar';
+import Detalhe from './pages/Detalhe';
+import { Contato, Faq, Integrantes, NaoEncontrada, Sobre } from './pages/Institucionais';
+import './index.css';
+createRoot(document.getElementById('root')!).render(<StrictMode><BrowserRouter><Routes><Route element={<Layout/>}><Route index element={<Home/>}/><Route path="ocorrencias" element={<Ocorrencias/>}/><Route path="ocorrencias/:id" element={<Detalhe/>}/><Route path="registrar" element={<Registrar/>}/><Route path="sobre" element={<Sobre/>}/><Route path="faq" element={<Faq/>}/><Route path="integrantes" element={<Integrantes/>}/><Route path="contato" element={<Contato/>}/><Route path="*" element={<NaoEncontrada/>}/></Route></Routes></BrowserRouter></StrictMode>);
