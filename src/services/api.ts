@@ -3,7 +3,7 @@ const base = (import.meta.env.VITE_API_URL || 'http://localhost:8080').replace(/
 export class ApiError extends Error { constructor(public status: number, message: string, public campos: Record<string, string> = {}) { super(message); } }
 async function request<T>(path: string, options: RequestInit = {}): Promise<T> {
   try {
-    const response = await fetch(`${base}${path}`, { ...options, headers: { ...(options.body ? { 'Content-Type': 'application/json' } : {}), ...options.headers }, signal: AbortSignal.timeout(45000) });
+    const response = await fetch(`${base}${path}`, { ...options, credentials: 'omit', headers: { ...(options.body ? { 'Content-Type': 'application/json' } : {}), ...options.headers }, signal: AbortSignal.timeout(45000) });
     if (!response.ok) {
       const error: ErroApi = await response.json().catch(() => ({ mensagem: 'O serviço não conseguiu concluir a solicitação.' }));
       throw new ApiError(response.status, error.mensagem, error.campos);
@@ -19,8 +19,9 @@ export const api = {
   ocorrencias: () => request<Ocorrencia[]>('/ocorrencias'),
   ocorrencia: (id: string) => request<Ocorrencia>(`/ocorrencias/${encodeURIComponent(id)}`),
   criar: (data: OcorrenciaEntrada) => request<Ocorrencia>('/ocorrencias', { method: 'POST', body: JSON.stringify(data) }),
-  atualizar: (id: number, data: OcorrenciaEntrada) => request<Ocorrencia>(`/ocorrencias/${id}`, { method: 'PUT', body: JSON.stringify(data) }),
-  remover: (id: number) => request<void>(`/ocorrencias/${id}`, { method: 'DELETE' }),
+  atualizar: (id: number, data: OcorrenciaEntrada, token: string) => request<Ocorrencia>(`/ocorrencias/${id}`, { method: 'PUT', body: JSON.stringify(data), headers: { Authorization: `Bearer ${token}` } }),
+  remover: (id: number, token: string) => request<void>(`/ocorrencias/${id}`, { method: 'DELETE', headers: { Authorization: `Bearer ${token}` } }),
+  autenticarGestao: (token: string) => request<{ perfil: string }>('/gestao/sessao', { headers: { Authorization: `Bearer ${token}` } }),
   historico: (id: string) => request<Atualizacao[]>(`/ocorrencias/${encodeURIComponent(id)}/atualizacoes`),
   comentar: (id: number, autor: string, mensagem: string) => request<Atualizacao>(`/ocorrencias/${id}/atualizacoes`, { method: 'POST', body: JSON.stringify({ autor, mensagem }) }),
 };

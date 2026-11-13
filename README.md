@@ -54,4 +54,6 @@ Este repositório contém exclusivamente Front-End Design Engineering. Java e En
 
 Código da API, entregue separadamente: https://github.com/proc0x41/bairro-em-dia-java-gs-2026. A API usa Oracle na entrega e H2 no perfil local. Configure VITE_API_URL com a URL HTTP local ou HTTPS do Render.
 
+Moradores podem consultar, registrar e comentar. Exclusão e mudança de situação são restritas à equipe: nos detalhes, use **Acesso da equipe → Entrar na gestão**. A chave é configurada como `ADMIN_TOKEN` somente no backend e enviada por Authorization após validação. Não configure chave de gestão em variáveis da Vercel. A interface mantém o acesso apenas na memória da página; sair ou recarregar exige nova autenticação. A API também bloqueia chamadas diretas não autorizadas.
+
 Em 13/11/2026, a interface compilada passou em sete verificações com a API Java conectada ao Oracle FIAP: cadastro, comentário, mudança de situação e rota dinâmica em três resoluções. As chamadas à API e a persistência foram reais. Os arquivos estáticos foram servidos dentro do navegador isolado de testes; a publicação na Vercel continua pendente. Resultados em `docs/validacao-frontend-oracle.json`. Os dados temporários foram removidos após a verificação.
