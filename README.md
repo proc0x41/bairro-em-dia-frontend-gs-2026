@@ -48,8 +48,10 @@ Implementação, documentação e verificações locais realizadas com apoio do 
 
 ## Escopo do repositório
 
-Este repositório contém exclusivamente Front-End Design Engineering. Java, Banco e Engenharia são entregas locais separadas, conforme o PDF. O repositório foi reorganizado sem reescrever o histórico: o commit inicial permanece preservado, e a versão atual é exclusiva do Front End.
+Este repositório contém exclusivamente Front-End Design Engineering. Java e Engenharia têm entregas próprias. A disciplina de Banco está sob responsabilidade de outra pessoa.
 
 ## API Java integrada
 
 Código da API, entregue separadamente: https://github.com/proc0x41/bairro-em-dia-java-gs-2026. A API usa Oracle na entrega e H2 no perfil local. Configure VITE_API_URL com a URL HTTP local ou HTTPS do Render.
+
+Em 13/11/2026, a interface compilada passou em sete verificações com a API Java conectada ao Oracle FIAP: cadastro, comentário, mudança de situação e rota dinâmica em três resoluções. As chamadas à API e a persistência foram reais. Os arquivos estáticos foram servidos dentro do navegador isolado de testes; a publicação na Vercel continua pendente. Resultados em `docs/validacao-frontend-oracle.json`. Os dados temporários foram removidos após a verificação.
