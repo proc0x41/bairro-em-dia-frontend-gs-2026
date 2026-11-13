@@ -8,3 +8,5 @@ dist/
 .idea/
 .vscode/
 .DS_Store
+.private/
+ACESSO-PROFESSOR.txt
