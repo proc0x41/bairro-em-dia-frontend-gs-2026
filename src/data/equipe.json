@@ -1,0 +1,31 @@
+{
+  "turma": "1TDSPW",
+  "representanteRm": "571703",
+  "integrantes": [
+    {
+      "nome": "Vinicius de Oliveira",
+      "rm": "561862",
+      "email": "rm561862@fiap.com.br"
+    },
+    {
+      "nome": "Robison Custodio Junior",
+      "rm": "572866",
+      "email": "rm572866@fiap.com.br"
+    },
+    {
+      "nome": "Lucas Fernando Silva",
+      "rm": "564848",
+      "email": "rm564848@fiap.com.br"
+    },
+    {
+      "nome": "Thiago Shimizu Sodré dos Santos",
+      "rm": "572867",
+      "email": "rm572867@fiap.com.br"
+    },
+    {
+      "nome": "Arthur Mendes Garcia",
+      "rm": "571703",
+      "email": "rm571703@fiap.com.br"
+    }
+  ]
+}
