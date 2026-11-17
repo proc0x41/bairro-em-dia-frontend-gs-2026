@@ -1,14 +1,14 @@
 # Entrega de Front-End Design Engineering
 
-Repositório público exclusivo: https://github.com/proc0x41/bairro-em-dia-frontend-gs-2026. Fonte: PDF do enunciado, páginas 58–74, especialmente 63 e 70.
+Fonte: enunciado, páginas 58–74.
 
-- React + Vite + TypeScript + Tailwind CSS; Fetch API.
-- Cinco páginas institucionais, páginas da solução e rota com parâmetro.
-- API Java remota com GET e escrita reais.
-- Publicação na Vercel: Root Directory na raiz do repositório (.), build npm run build, saída dist.
-- VITE_API_URL deve apontar para a API Java publicada.
-- Vídeo YouTube público/não listado de até três minutos.
-- Mínimo de cinco commits por integrante e quinze no total; para este grupo de cinco, cinco por pessoa correspondem a 25 commits.
-- ZIP de até 50 MB, sem node_modules, com README e identificação.
+Código e configurações incluídos no ZIP, sem dependências instaladas.
 
-Pendências: publicação Vercel, URL remota da API, vídeo e revisão/contribuições do grupo. Java, Banco e Engenharia são entregues separadamente e não têm repositório obrigatório no enunciado.
+- Front End na Vercel: https://bairro-em-dia-frontend-gs-2026-pygm.vercel.app
+- API no Render: https://bairro-em-dia-java-gs-2026.onrender.com
+- GitHub Front End: https://github.com/proc0x41/bairro-em-dia-frontend-gs-2026
+- GitHub Java: https://github.com/proc0x41/bairro-em-dia-java-gs-2026
+
+O README contém execução, equipe, contato, tecnologias, estrutura e links. A contagem GitHub verificada em 17/11/2026 é de 28 commits, com pelo menos cinco atribuídos a cada integrante; a participação efetiva não é certificada. A documentação revisada localmente não foi enviada ao repositório remoto.
+
+Veja CONFERENCIA-ENTREGA.txt para os testes executados, limitações e requisitos não atendidos. A preparação do ZIP não é uma certificação de conformidade integral.
